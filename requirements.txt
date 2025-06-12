@@ -1,3 +1,5 @@
 streamlit
 pandas
 pydrive
+google-api-python-client
+google-auth
