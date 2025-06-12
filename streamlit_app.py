@@ -6,7 +6,7 @@ import io
 
 # Carica credenziali
 creds = service_account.Credentials.from_service_account_file(
-    "service_account.json",
+    "client_secret_263743908793-lfpjkf5o9rc12r776l25en7465p1jkbl.apps.googleusercontent.com.json",
     scopes=["https://www.googleapis.com/auth/drive.readonly"]
 )
 
