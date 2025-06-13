@@ -12,7 +12,7 @@ try:
     # Caricamento del file
     df = pd.read_csv(url, sep=";", header=None)
     df.columns = ["Operatore", "Timestamp", "Allevatore", "Specie", "Codice", "DataEvento",
-                  "Categoria", "Azione", "Note", "LAT", "LONG"]
+                  "Categoria", "Azione", "Note", "LAT", "LON"]
     
     # Filtro per operatore
     operatore = st.text_input("Filtra per operatore (es: Ricci, Chiriu, Pinna)")
@@ -22,9 +22,9 @@ try:
     st.dataframe(df)
 
     # Mostra mappa se ci sono coordinate valide
-    if not df.empty and "LAT" in df.columns and "LONG" in df.columns:
+    if not df.empty and "LAT" in df.columns and "LON" in df.columns:
         with st.expander("📍 Mappa"):
-            st.map(df[["LAT", "LONG"]])
+            st.map(df[["LAT", "LON"]])
 
 except Exception as e:
     st.error(f"Errore nel caricamento del file: {e}")
