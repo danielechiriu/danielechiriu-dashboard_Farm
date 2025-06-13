@@ -12,7 +12,7 @@ try:
     # Caricamento del file
     df = pd.read_csv(url, sep=";", header=None)
     df.columns = ["Operatore", "Timestamp", "Allevatore", "Specie", "Codice", "DataEvento",
-                  "Categoria", "Azione", "Note", "Latitudine", "Longitudine"]
+                  "Categoria", "Azione", "Note", "Latitude", "Longitude"]
     
     # Filtro per operatore
     operatore = st.text_input("Filtra per operatore (es: Ricci, Chiriu, Pinna)")
@@ -22,7 +22,7 @@ try:
     st.dataframe(df)
 
     # Mostra mappa se ci sono coordinate valide
-    if not df.empty and "Latitudine" in df.columns and "Longitudine" in df.columns:
+    if not df.empty and "Latitude" in df.columns and "Longitude" in df.columns:
         with st.expander("📍 Mappa"):
             st.map(df[["Latitudine", "Longitudine"]])
 
