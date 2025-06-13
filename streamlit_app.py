@@ -24,7 +24,7 @@ try:
     # Mostra mappa se ci sono coordinate valide
     if not df.empty and "Latitude" in df.columns and "Longitude" in df.columns:
         with st.expander("📍 Mappa"):
-            st.map(df[["Latitudine", "Longitudine"]])
+            st.map(df[["Latitude", "Longitude"]])
 
 except Exception as e:
     st.error(f"Errore nel caricamento del file: {e}")
